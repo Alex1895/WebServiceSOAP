@@ -41,18 +41,17 @@ public class employeemanager {
 		//employee employes;
 		for (employee emp: listEmployee){
 			if (emp.getId()==id){
-				listEmployee.remove(emp);
+				listEmployee.remove(emp); //elimina el dato 
 				return "elemento eliminado";
 			}
 		}
 		return "no encontro nada";
 	}
 	@WebMethod()
-	public String addEmploye(Employee e){
+	public String addEmploye(int id , String name, int age){
 		//employee employes;
-		int id;
 		for (employee emp: listEmployee){
-			if(listEmployee.size() > 0 && emp.getId()== id){
+			if(listEmployee.size() > 0 && emp.getId()== id){ 
 			
 			if (emp.getId()==id){
 				listEmployee.add(emp);
@@ -63,5 +62,18 @@ public class employeemanager {
 		}
 	}
 		return "no encontro nada";
+	@WebMethod()
+	public String addEmploye2(int id , String name, int age){
+		Address a = new Address.getValue(); //obtener el valor del objeto address previamente usado
+		//int id;
+		for (employee emp: listEmployee){
+			if(! listEmployee.isEmpty() || listEmployee.size() >= 0 ){ //si la lista esta vacia retorna null 
+			return  null;
+		}else { // de lo contrario agrega los siguientes valores 
+			return emp.add(id,name,age,a);
+		}
+	}
+		return "lista vacia ";
+
 }
 }
