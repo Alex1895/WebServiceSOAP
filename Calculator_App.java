@@ -3,11 +3,12 @@ import javax.xml.ws.Endpoint;
 import javax.jws.WebService;
 @WebService
 public class Calculator_App {
-@WebEndpoint
+//@WebEndpoint
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		String url = "http://localhost:8039/Calculator";
+		Calculator calculator = new Calculator();
 		Endpoint.publish("http://localhost:8039/Calculator", new Calculator());
-		//System.out.println();
+		System.out.println("Running");
 	}
 }
